@@ -10,7 +10,6 @@ const employees = {
 
 const report = createReportObject(employees);
 const reportWithIterator = createIteratorObject(report);
-// console.log(report.allEmployees);
 
 for (const item of reportWithIterator) {
   console.log(item);
