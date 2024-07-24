@@ -7,7 +7,7 @@ export default function createReportObject(employeesList) {
         total++;
       }
       return total;
-    }
+    },
   };
   return emp;
 }
