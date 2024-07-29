@@ -4,10 +4,7 @@ async function asyncUploadUser() {
   const user = await createUser();
   const photo = await uploadPhoto();
 
-  return {
-    photo,
-    user,
-  };
+  return { photo, user, };
 }
 
 export default asyncUploadUser;
