@@ -1,6 +1,4 @@
-const { createServer } = require('node:http');
-
-const port = 1245;
+const { createServer } = require('http');
 
 const app = createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain');
@@ -8,6 +6,6 @@ const app = createServer((req, res) => {
   res.end();
 });
 
-app.listen(port);
+app.listen(1245);
 
 module.exports = app;
