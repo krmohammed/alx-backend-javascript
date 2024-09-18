@@ -4,7 +4,7 @@ function countStudents (path) {
   try {
     const data = fs.readFileSync(path, 'utf8');
     const lines = data.split('\r\n');
-    const valid = lines.filter((line) => line.trim() !== "")
+    const valid = lines.filter((line) => line.trim() !== "");
     const header = valid.shift();
 
     if (valid.length <= 0) {
@@ -12,7 +12,7 @@ function countStudents (path) {
       return;
     }
 
-    const studentsField = {}
+    const studentsField = {};
     valid.forEach((line) => {
       const fields = line.split(',');
       const fname = fields[0];
