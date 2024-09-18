@@ -1,15 +1,13 @@
-const { createServer } = require('http')
+const { createServer } = require('http');
 const countStudents = require('./3-read_file_async.js');
 const path = process.argv[2];
 
 const app = createServer((req, res) => {
   if (req.url === '/') {
-    res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.write('Hello Holberton School');
   }
   if (req.url === '/students') {
-    res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     countStudents(path)
     .then(() => {
