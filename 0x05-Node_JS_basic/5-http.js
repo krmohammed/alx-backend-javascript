@@ -15,7 +15,7 @@ const app = createServer((req, res) => {
     })
     .catch((err) => {
       res.end(err);
-    })
+    });
   }
   res.end();
 });
