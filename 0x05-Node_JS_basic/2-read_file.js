@@ -20,17 +20,19 @@ function countStudents(path) {
     });
     const studentsByFields = {};
     fields.forEach((val) => {
-      const b = inner.filter(v => v.includes(val));
+      const b = inner.filter((v) => v.includes(val));
       const c = [];
       b.forEach((v) => {
         c.push(v[0]);
       });
       studentsByFields[val] = c;
-    })
+    });
     const students = inner.length;
     console.log(`Number of students: ${students}`);
     for (const a in studentsByFields) {
-      console.log(`Number of students in ${a}: ${studentsByFields[a].length}. List: ${studentsByFields[a].join(', ')}`);
+      if (studentsByFields.hasOwnProperty(a)) {
+        console.log(`Number of students in ${a}: ${studentsByFields[a].length}. List: ${studentsByFields[a].join(', ')}`);
+      }
     }
   } else {
     throw new Error('Cannot load the database');
