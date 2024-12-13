@@ -12,6 +12,6 @@ rl.on('line', (input) => {
   rl.close();
 });
 
-rl.on('close', () => {
+process.stdin.on('end', () => {
   console.log('This important software is now closing');
 });
