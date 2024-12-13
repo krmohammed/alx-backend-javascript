@@ -8,29 +8,29 @@ function countStudents(path) {
 
     const inner = [];
     data.forEach((val) => {
-      val = val.trim();
-      let b = val.split(',');
+      const a = val.trim();
+      const b = a.split(',');
       inner.push(b);
-    })
+    });
     const fields = [];
     inner.forEach((val) => {
       if (!fields.includes(val[val.length - 1])) {
         fields.push(val[val.length - 1]);
       }
-    })
-    const students_by_fields = {};
+    });
+    const studentsByFields = {};
     fields.forEach((val) => {
-      let b = inner.filter(v => v.includes(val));
-      let c = [];
+      const b = inner.filter(v => v.includes(val));
+      const c = [];
       b.forEach((v) => {
         c.push(v[0]);
       });
-      students_by_fields[val] = c;
+      studentsByFields[val] = c;
     })
-    students = inner.length;
+    const students = inner.length;
     console.log(`Number of students: ${students}`);
-    for (let a in students_by_fields) {
-      console.log(`Number of students in ${a}: ${students_by_fields[a].length}. List: ${students_by_fields[a].join(', ')}`);
+    for (const a in studentsByFields) {
+      console.log(`Number of students in ${a}: ${studentsByFields[a].length}. List: ${studentsByFields[a].join(', ')}`);
     }
   } else {
     throw new Error('Cannot load the database');
