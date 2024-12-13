@@ -1,9 +1,17 @@
+const readline = require('readline')
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+})
+
 console.log('Welcome to ALX, what is your name?');
 
-process.stdin.on('data', (data) => {
-  console.log(`Your name is: ${data}`);
-});
+rl.on('line', (input) => {
+  console.log(`Your name is: ${input}`);
+  rl.close();
+})
 
-process.stdin.on('end', () => {
+rl.on('close', () => {
   console.log('This important software is now closing');
-});
+})
