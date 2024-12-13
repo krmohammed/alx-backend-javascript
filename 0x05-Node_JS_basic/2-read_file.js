@@ -30,7 +30,7 @@ function countStudents(path) {
     const students = inner.length;
     console.log(`Number of students: ${students}`);
     for (const a in studentsByFields) {
-      if (studentsByFields.hasOwnProperty(a)) {
+      if (Object.hasOwn(studentsByFields, a)) {
         console.log(`Number of students in ${a}: ${studentsByFields[a].length}. List: ${studentsByFields[a].join(', ')}`);
       }
     }
