@@ -53,7 +53,11 @@ app.get('/students', async (req, res) => {
   let data = 'This is the list of our students\n';
   countStudents(path)
     .then((e) => {
-      data += e;
+      if (typeof e === 'object') {
+        data += 'Cannot load the database';
+      } else {
+        data += e;
+      }
       res.send(data);
     });
 });
