@@ -12,10 +12,10 @@ const app = createServer((req, res) => {
   if (req.url === '/students') {
     res.write('This is the list of our students');
     countStudents(process.argv[2])
-    .then((data) => {
-      console.log(data);
-        });
-      res.end();
+      .then((data) => {
+        console.log(data);
+      });
+    res.end();
   }
 });
 
