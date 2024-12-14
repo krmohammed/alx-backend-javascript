@@ -10,7 +10,7 @@ async function countStudents(path) {
     const content = await fs.readFile(path, 'utf-8');
     const data = content.trim().split('\r\n');
     data.shift();
-  
+
     const inner = [];
     data.forEach((val) => {
       const a = val.trim();
@@ -33,7 +33,7 @@ async function countStudents(path) {
       studentsByFields[val] = c;
     });
     const students = inner.length;
-    let result = [`Number of students: ${students}`];
+    const result = [`Number of students: ${students}`];
     for (const a in studentsByFields) {
       if (Object.hasOwn(studentsByFields, a)) {
         result.push(`Number of students in ${a}: ${studentsByFields[a].length}. List: ${studentsByFields[a].join(', ')}`);
@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 
 app.get('/students', async (req, res) => {
   let data = 'This is the list of our students\n';
-  countStudents(process.argv[2])
+  countStudents(path)
     .then((e) => {
       data += e;
       res.send(data);
