@@ -1,8 +1,9 @@
 const express = require('express');
+
 const app = express();
 const port = 1245;
 
-app.get('/', (res, req) => {
+app.get('/', (res) => {
   res.send('Hello Holberton School!');
 });
 
