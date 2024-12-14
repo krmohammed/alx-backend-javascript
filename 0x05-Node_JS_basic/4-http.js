@@ -1,4 +1,3 @@
-const { response } = require('express');
 const { createServer } = require('http');
 
 const port = 1245;
