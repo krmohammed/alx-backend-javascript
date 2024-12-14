@@ -2,7 +2,6 @@ const { createServer } = require('http');
 const countStudents = require('./3-read_file_async');
 
 const port = 1245;
-const db = 'database.csv';
 
 const app = createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
@@ -15,8 +14,8 @@ const app = createServer((req, res) => {
     countStudents(process.argv[2])
     .then((data) => {
       console.log(data);
-    });
-    res.end();
+        });
+      res.end();
   }
 });
 
