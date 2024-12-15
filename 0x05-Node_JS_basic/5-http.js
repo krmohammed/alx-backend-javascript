@@ -32,7 +32,7 @@ async function countStudents(path) {
     });
     const students = inner.length;
     const introMsg = `Number of students: ${students}`;
-    let bodyMsg = [];
+    const bodyMsg = [];
     for (const a in studentsByFields) {
       if (Object.hasOwn(studentsByFields, a)) {
         bodyMsg.push(`Number of students in ${a}: ${studentsByFields[a].length}. List: ${studentsByFields[a].join(', ')}`);
@@ -40,7 +40,7 @@ async function countStudents(path) {
     }
     return `${introMsg}\n${bodyMsg.join('\n')}`;
   } catch (error) {
-    throw new Error('Cannot load the database');
+    return new Error('Cannot load the database');
   }
 }
 
